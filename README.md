@@ -30,6 +30,13 @@ chmod +x build_plus2.sh && ./build_plus2.sh
 | `btn_pin` | **37** |
 | `led_pin` | **19** |
 
+
+## First time setup
+
+1. After flashing the firmware you should see a WiFi network with SSID starting with `esplog_`. Connect to that network with password **`12345678`**.
+2. Go to `http://192.168.4.1/settings`, enter the SDA and SCL pin numbers you have connected the IMU to, click **Apply**.
+3. Reboot the board and go to `http://192.168.4.1`. If the IMU is OK, **Avg gyro sample int. (ns)** should be non-zero.
+4. Calibrate the accelerometer: go to `http://192.168.4.1/calibration`, add calibration points (e.g. x-up, x-down, y-up, y-down, z-up, z-down). Hold the IMU stationary for a moment before adding each point as the accelerometer data is low-pass filtered. Then click **Calculate offsets** and **Save to flash**.
 ## Usage
 
 - **Power on** — hold Button C (side) 2 seconds
