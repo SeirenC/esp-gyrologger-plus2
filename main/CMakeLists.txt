@@ -1,0 +1,28 @@
+idf_component_register(
+    SRCS 
+        "esp-gyrologger.cpp" 
+        "global_context.cpp"
+        "gyro/gyro_bmi160.cpp" 
+        "gyro/gyro_lsm6.cpp" 
+        "gyro/gyro_mpu6050.cpp" 
+        "gyro/gyro_icm42688.cpp" 
+        "gyro/gyro_probe.cpp" 
+        "logger/logger.cpp" 
+        "wifi/http.cpp" 
+        # "bus/bus_i2c.c" 
+        "bus/mini_i2c.c" 
+        "bus/aux_i2c.cpp" 
+        "misc/misc.cpp" 
+        "storage/storage_fat.cpp" 
+        "storage/wdt_off.c" 
+        "wifi/wifi.cpp" 
+        "wifi/random_names.cpp" 
+        "wifi/cam_control.cpp" 
+        "misc/led_strip/led_strip.c"
+        "misc/display/src/display.cpp"
+        "misc/display/src/tft/u8g2_esplcd.c"
+        "misc/battery.cpp"
+    INCLUDE_DIRS "."
+    LDFRAGMENTS "linker.lf")
+
+target_compile_options(${COMPONENT_LIB} PRIVATE -std=gnu++17)
